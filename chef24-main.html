@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chef 24/7 Kitchen Drip - Authentic New Orleans cuisine, private chef services, and catering in Fort Worth. Experience genuine Creole and Cajun flavors."
+    />
+    <meta
+      name="keywords"
+      content="New Orleans chef, Fort Worth catering, private chef, Creole food, Cajun cuisine, Louisiana cooking"
+    />
+    <title>
+      Chef 24/7 Kitchen Drip | Authentic New Orleans Private Chef & Catering
+    </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/chef24-main.css" />
+    <link rel="stylesheet" href="assets/css/chef24-modal.css" />
+    <link rel="stylesheet" href="assets/css/chef24-animations.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Floating Icons Container -->
+    <div id="floating-icons"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="nav-content">
+        <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+          <button class="book-now-btn" onclick="openBookingModal()">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Experience Authentic New Orleans Cuisine</h1>
+        <p>Private Chef Services | Catering | Cooking Classes</p>
+        <button class="cta-btn" onclick="openBookingModal()">
+          Book Your Experience
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about reveal">
+      <h2>About Chef Eliot</h2>
+      <div class="about-content">
+        <div class="chef-info">
+          <p>
+            Bringing authentic New Orleans flavors to Fort Worth, Chef Eliot
+            combines traditional Creole and Cajun cooking with modern culinary
+            techniques. With over 15 years of experience, he creates
+            unforgettable dining experiences that celebrate the rich culture and
+            heritage of Louisiana cuisine.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="service-card reveal">
+          <h3>Private Chef</h3>
+          <p>
+            Experience a personalized dining journey in your home with custom
+            menus tailored to your preferences.
+          </p>
+          <button class="service-btn" onclick="openBookingModal()">
+            Book Private Chef
+          </button>
+        </div>
+        <div class="service-card reveal">
+          <h3>Catering</h3>
+          <p>
+            Full-service catering for events of all sizes, featuring authentic
+            New Orleans cuisine.
+          </p>
+          <button class="service-btn" onclick="openBookingModal()">
+            Book Catering
+          </button>
+        </div>
+        <div class="service-card reveal">
+          <h3>Cooking Classes</h3>
+          <p>
+            Learn the secrets of Creole and Cajun cooking with hands-on classes
+            for all skill levels.
+          </p>
+          <button class="service-btn" onclick="openBookingModal()">
+            Book Class
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <h2>Food Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-placeholder">Gallery Coming Soon</div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact reveal">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p>Email: 724chef@gmail.com</p>
+        <p>Phone: (817) XXX-XXXX</p>
+        <div class="social-links">
+          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeBookingModal()">&times;</button>
+        <h2>Book Your Experience</h2>
+        <div class="form-progress">
+          <div class="progress-bar"></div>
+        </div>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="date">Event Date</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="time">Event Time</label>
+            <input type="time" id="time" name="time" required />
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <input type="number" id="guests" name="guests" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="serviceType">Service Type</label>
+            <select id="serviceType" name="serviceType" required>
+              <option value="">Select a service</option>
+              <option value="private-chef">Private Chef</option>
+              <option value="catering">Catering</option>
+              <option value="cooking-class">Cooking Class</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dietary">Dietary Restrictions</label>
+            <textarea id="dietary" name="dietary"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Chef 24/7 Kitchen Drip. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/chef24-form.js"></script>
+    <script src="assets/js/chef24-animations.js"></script>
+    <script>
+      // Mobile Menu
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const navLinks = document.querySelector(".nav-links");
+        const navLinksItems = document.querySelectorAll(".nav-links a");
+
+        mobileMenuBtn.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          mobileMenuBtn.textContent = navLinks.classList.contains("active")
+            ? "✕"
+            : "☰";
+        });
+
+        navLinksItems.forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            mobileMenuBtn.textContent = "☰";
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !e.target.closest(".nav-content") &&
+            navLinks.classList.contains("active")
+          ) {
+            navLinks.classList.remove("active");
+            mobileMenuBtn.textContent = "☰";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
