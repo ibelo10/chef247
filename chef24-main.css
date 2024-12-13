@@ -1,0 +1,485 @@
+﻿/* chef24-main.css */
+
+/* Variables */
+:root {
+  /* Mardi Gras Colors */
+  --mardi-purple: #58427c;
+  --mardi-gold: #ffd700;
+  --mardi-green: #2d5a27;
+  --mardi-secondary-purple: #8b6b9f;
+  --mardi-secondary-gold: #fee4a6;
+  --mardi-secondary-green: #4a7a44;
+
+  /* Supporting Colors */
+  --cream: #fffdf6;
+  --dark: #1a1a1a;
+  --dark-overlay: rgba(26, 26, 26, 0.85);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: var(--mardi-purple);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+/* Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(88, 66, 124, 0.95);
+  padding: 1rem 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid var(--mardi-gold);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--mardi-gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--mardi-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(var(--dark-overlay), var(--dark-overlay)),
+    url("../images/hero-placeholder.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  margin-top: -80px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--mardi-gold);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta-btn,
+.book-now-btn,
+.submit-btn,
+.service-btn {
+  background: var(--mardi-gold);
+  color: var(--mardi-purple);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-btn:hover,
+.book-now-btn:hover,
+.submit-btn:hover,
+.service-btn:hover {
+  background: var(--mardi-secondary-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Sections */
+section {
+  padding: 5rem 2rem;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--mardi-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* About Section */
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--mardi-secondary-purple);
+  padding: 3rem;
+  border-radius: 15px;
+  border: 2px solid var(--mardi-gold);
+}
+
+.chef-info p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Services Section */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--mardi-secondary-purple);
+  border: 2px solid var(--mardi-gold);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  color: var(--mardi-gold);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  margin-bottom: 1.5rem;
+}
+
+/* Gallery Section */
+/* Continuing from gallery section... */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-placeholder {
+  background: var(--mardi-secondary-purple);
+  border: 2px solid var(--mardi-gold);
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--mardi-gold);
+  grid-column: 1 / -1;
+}
+
+/* Contact Section */
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--mardi-secondary-purple);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid var(--mardi-gold);
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links a {
+  color: var(--mardi-gold);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--mardi-gold);
+  border-radius: 5px;
+}
+
+.social-links a:hover {
+  background: var(--mardi-gold);
+  color: var(--mardi-purple);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid var(--mardi-gold);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mardi-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mardi-gold);
+  border-radius: 6px;
+  border: 3px solid var(--mardi-purple);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mardi-secondary-gold);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Mobile Navigation */
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    left: 1rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--mardi-purple);
+    flex-direction: column;
+    justify-content: center;
+    transition: left 0.3s ease;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .book-now-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  /* Sections */
+  section {
+    padding: 4rem 1rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  /* Services */
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  /* About */
+  .about-content {
+    padding: 1.5rem;
+  }
+
+  /* Contact */
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    display: block;
+  }
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  section h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-btn,
+  .book-now-btn,
+  .submit-btn,
+  .service-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .nav-links {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    padding: 0.5rem;
+  }
+
+  .hero {
+    min-height: 120vh;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .nav-links,
+  .book-now-btn,
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  body {
+    color: black;
+    background: white;
+  }
+
+  .hero,
+  .about-content,
+  .service-card {
+    border: 1px solid black;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .hero {
+    height: auto;
+    background: none;
+  }
+}
